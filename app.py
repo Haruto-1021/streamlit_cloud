@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1SAebmKC6sCd9nUPyu5oh9DZWN2GmlPDm
 """
 
+import streamlit as st
 import itertools
 l0 = ['', '']                   #名前の文字列
 l1=["none","upper"]             # 何もしない、大文字へ
@@ -16,11 +17,11 @@ n0 = ['', '', '']               #誕生日の文字列
 
 s0=["!", "#", "$", "%", "=", "-", "+", "@"] #記号の文字列
 
-l0[0] = input('名前を入力してください:')
-l0[1] = input('名字を入力してください')
-n0[0] = input('生まれた年を入力してください:')
-n0[1] = input('生まれた月を入力してください:')
-n0[2] = input('生まれた日付を入力してください:')
+l0[0] = st.input('名前を入力してください:')
+l0[1] = st.input('名字を入力してください')
+n0[0] = st.input('生まれた年を入力してください:')
+n0[1] = st.input('生まれた月を入力してください:')
+n0[2] = st.input('生まれた日付を入力してください:')
 
 c0=["010", "012", "013", "014",
     "020", "021", "023", "024",
@@ -84,7 +85,7 @@ for v1,v2,w0 in itertools.product(l1,l2,c0):
   name.append(change0(l0[0],v1,v2))
   name.append(change0(l0[1],v1,v2))
   x=change1(name,n0,w0)
-  print(x)
+  st.print(x)
   count+=1
 
-print("Total= ",count)
+st.print("Total= ",count)
