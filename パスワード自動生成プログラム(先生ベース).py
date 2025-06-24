@@ -7,19 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1vUU5miaABkQ1dVHuFia-NXtXbwx19KVn
 """
 
-import streamlit as st
-<<<<<<< HEAD:app.py
-import os
-input_firstname = st.text_input('名前を入力してください:')
-input_lastname = st.text_input('名字を入力してください:')
-st.write('生年月日を入力してください:"')
-cols = st.columns(3)
-year = cols[0].text.input('年',placeholder = 'yyyy')
-month = cols[1].text.input('月',placeholder = 'mm')
-day = cols[2].text.input('日',placeholder = 'dd')
-if year and month and day:
-  st.success(f"{year}年{month}月{day}日")
-=======
 import itertools
 l0 = ['', '']                   #名前の文字列
 l1=["none","upper"]             # 何もしない、大文字へ
