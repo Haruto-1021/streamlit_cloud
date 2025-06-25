@@ -15,6 +15,6 @@ input_date = st.text_input('生まれた日を入力してください')
 result=""
 
 if st.button('表示'):
-    result='「'+input_firstname'」「'+input_lastname'」の誕生日は「'+input_year'」年「'+input_month'」月「'+input_date'」日です'
+    result='「'+input_firstname+'」「'+input_lastname+'」の誕生日は「'+input_year+'」年「'+input_month+'」月「'+input_date+'」日です'
     st.write(result)
 
