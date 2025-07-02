@@ -25,11 +25,12 @@ else:
 select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
-col1, col2 = st.columns(2)
-with col1:
-    button1 = st.button('記号無で生成')
-with col2:
-    button2 = st.button('記号有で生成')
+# col1, col2 = st.columns(2)
+# with col1:
+#     button1 = st.button('記号無で生成')
+# with col2:
+#     button2 = st.button('記号有で生成')
+sign = st.radio("", ("記号無で作成", "記号有で生成"), args=[0, 1])
     
 if button1:
     if input_firstname == '' or input_lastname == '':
