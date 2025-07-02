@@ -12,7 +12,6 @@ input_firstname = st.text_input('名前を入力してください')
 input_lastname = st.text_input('名字を入力してください')
 select_year = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
 select_month = st.selectbox('生まれた月を選択してください',(range(1,13)))
-input_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 if int(select_month) == 4 or int(select_month) == 6 or int(select_month) == 9 or int(select_month) == 11:
     n = 30
 elif ((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2:
@@ -21,6 +20,7 @@ elif not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(sele
     n = 28
 else:
     n=31
+input_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
 col1, col2 = st.columns(2)
