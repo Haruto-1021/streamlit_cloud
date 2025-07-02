@@ -25,22 +25,24 @@ else:
 select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
-# col1, col2 = st.columns(2)
-# with col1:
-#     button1 = st.button('記号無で生成')
-# with col2:
-#     button2 = st.button('記号有で生成')
-sign = st.radio("", ("記号無で作成", "記号有で生成"), args=[0, 1])
-    
-if button1:
-    if input_firstname == '' or input_lastname == '':
-        st.write('名前を入力してください')
-    else:    
-        result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
-        st.write(result)
-elif button2:
-    if input_firstname == '' or input_lastname == '':
-        st.write('名前を入力してください')
-    else:
-         result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
-         st.write(result)
+col1, col2, col3 = st.columns(3)
+with col1:
+    radio1 = st.radio('記号なし')
+with col2:
+    radio2 = st.radio('記号あり')
+with col3:
+    button = st.button('作成')
+
+if button:
+    if radio1:
+        if input_firstname == '' or input_lastname == '':
+            st.write('名前を入力してください')
+        else:    
+            result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
+            st.write(result)
+    elif radio2:
+        if input_firstname == '' or input_lastname == '':
+            st.write('名前を入力してください')
+        else:
+            result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
+            st.write(result)
