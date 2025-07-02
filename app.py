@@ -25,13 +25,8 @@ else:
 select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
-col1, col2, col3 = st.columns(3)
-with col1:
-    radio1 = st.radio('記号なし')
-with col2:
-    radio2 = st.radio('記号あり')
-with col3:
-    button = st.button('作成')
+select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('はい', 'いいえ'))
+button = st.button('作成')
 
 if button:
     if radio1:
