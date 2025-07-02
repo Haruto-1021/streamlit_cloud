@@ -30,14 +30,22 @@ button = st.button('作成')
 
 if button:
     if select_sign == 'いいえ':
-        if input_firstname == '' or input_lastname == '':
+        if input_firstname == '' and input_lastname == '':
+            st.write('名前と名字を入力してください')
+        elif input_firstname == '' and input_lastname != '':
             st.write('名前を入力してください')
+        elif input_firstname != '' and input_lastname == '':
+            st.write('名字を入力してください')
         else:    
             result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
             st.write(result)
     elif select_sign == 'はい':
-        if input_firstname == '' or input_lastname == '':
+        if input_firstname == '' and input_lastname == '':
+            st.write('名前と名字を入力してください')
+        elif input_firstname == '' and input_lastname != '':
             st.write('名前を入力してください')
+        elif input_firstname != '' and input_lastname == '':
+            st.write('名字を入力してください')
         else:
             result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
             st.write(result)
