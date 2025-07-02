@@ -8,6 +8,8 @@ import streamlit as st
 import os
 from datetime import date
 
+st.title('パスワード自動作成プログラム')
+
 input_firstname = st.text_input('名前を入力してください')
 input_lastname = st.text_input('名字を入力してください')
 select_year = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
