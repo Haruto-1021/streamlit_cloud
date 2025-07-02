@@ -20,7 +20,7 @@ elif not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(sele
     n = 28
 else:
     n=31
-input_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
+select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
 col1, col2 = st.columns(2)
