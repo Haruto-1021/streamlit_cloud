@@ -23,7 +23,7 @@ with col2:
 if input_firstname == '' or input_lastname == '':
     st.write('名前を入力してください')
 else:
-    if int(input_date) < 0 or int(input_date) > 31 or ((int(select_month) = 4 or int(select_month) = 6 or int(select_month) = 9 or int(select_month) = 11) and int(input_day) > 30) or (((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2 and int(input_date) > 29) or (not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2 and int(input_date) > 28):
+    if int(input_date) < 0 or int(input_date) > 31 or ((int(select_month) == 4 or int(select_month) == 6 or int(select_month) == 9 or int(select_month) == 11) and int(input_day) > 30) or (((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2 and int(input_date) > 29) or (not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2 and int(input_date) > 28):
         st.write('正しい生年月日を入力してください')
     else:
         if button1:
