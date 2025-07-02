@@ -33,11 +33,11 @@ if button1:
     if input_firstname == '' or input_lastname == '':
         st.write('名前を入力してください')
     else:    
-        result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + input_date + '日です'
+        result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
         st.write(result)
 elif button2:
     if input_firstname == '' or input_lastname == '':
         st.write('名前を入力してください')
     else:
-         result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + input_date + '日です!'
+         result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
          st.write(result)
