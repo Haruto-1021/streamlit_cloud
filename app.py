@@ -25,17 +25,17 @@ else:
 select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
-select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('はい', 'いいえ'))
+select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
 button = st.button('作成')
 
 if button:
-    if radio1:
+    if select_sign = 'いいえ':
         if input_firstname == '' or input_lastname == '':
             st.write('名前を入力してください')
         else:    
             result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
             st.write(result)
-    elif radio2:
+    elif select_sign = 'はい':
         if input_firstname == '' or input_lastname == '':
             st.write('名前を入力してください')
         else:
