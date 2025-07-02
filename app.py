@@ -10,7 +10,7 @@ from datetime import date
 
 input_firstname = st.text_input('名前を入力してください')
 input_lastname = st.text_input('名字を入力してください')
-select_year = st.selectbox('年',(range(1990,2026)))
+select_year = st.selectbox('年',(range(1900,2026)))
 select_month = st.selectbox('月',(range(1,13)))
 input_date = st.text_input('日')
 result=""
