@@ -55,6 +55,9 @@ else:
 n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
+
+z = st.int_input(何文字以上のパスワードを生成しますか)
+
 button = st.button('作成')
 
 
@@ -109,12 +112,15 @@ if button:
               name.append(change0(l0[0],v1,v2))
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
-              st.write(x)
-              st.write(x.replace('i','1'))
-              st.write(x.replace('o','0'))
-              st.write(x.replace('0','o'))
-              st.write(x.replace('1','i'))
-              count+=1
+              if len(x)<z:
+                  continue
+              else:
+                  st.write(x)
+                  st.write(x.replace('i','1'))
+                  st.write(x.replace('o','0'))
+                  st.write(x.replace('0','o'))
+                  st.write(x.replace('1','i'))
+                  count+=1
             st.write(str(count) + '個のパスワードを生成しました')
                 
     elif select_sign == 'はい':
@@ -166,7 +172,11 @@ if button:
               name.append(change0(l0[0],v1,v2))
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
-              st.write(x)
-              st.write(x.replace('a','@'))
-              count+=1
+              if len(x)<n:
+                  continue
+              else:
+                  st.write(x)
+                  st.write(x.replace('a','@'))
+                  st.write(x.replace('s','$'))
+                  count+=1
             st.write(str(count) + '個のパスワードを生成しました')
