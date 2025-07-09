@@ -7,6 +7,7 @@
 import streamlit as st
 import os
 from datetime import date
+import itertools
 
 st.title('パスワード自動作成プログラム')
 
