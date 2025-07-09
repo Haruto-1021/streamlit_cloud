@@ -18,7 +18,26 @@ n0 = ['', '', '']               #生年月日の文字列
 
 s0 = ["!", "#", "$", "%", "=", "-", "+", "@"] #記号の文字列
 
-result=""
+c0=["010", "012", "013", "014",
+    "020", "021", "023", "024",
+    "030", "031", "032", "034",
+    "040", "041", "042", "043",
+    "101", "102", "103", "104",
+    "120", "121", "123", "124",
+    "130", "131", "132", "134",
+    "140", "141", "142", "143",
+    "201", "202", "203", "204",
+    "210", "212", "213", "214",
+    "230", "231", "232", "234",
+    "240", "241", "242", "243",
+    "301", "302", "303", "304",
+    "310", "312", "313", "314",
+    "320", "321", "323", "324",
+    "340", "341", "342", "343",
+    "401", "402", "403", "404",
+    "410", "412", "413", "414",
+    "420", "421", "423", "424",
+    "430", "431", "432", "434"] #　並びパターン
 
 l0[0] = st.text_input('名前を入力してください')
 l0[1] = st.text_input('名字を入力してください')
@@ -37,6 +56,8 @@ n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1))
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
 button = st.button('作成')
 
+
+
 if button:
     if select_sign == 'いいえ':
         if l0[0] == '' and l0[1] == '':
@@ -46,8 +67,50 @@ if button:
         elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:    
-            result = str(l0[0]) + str(l0[1]) + 'の誕生日は' + str(n0[0]) + '年'+ str(n0[1]) + '月' + str(n0[2]) + '日です'
-            st.write(result)
+            def change0(x0,x1,x2): # 文字列の置き換え
+              if x1=="none":
+                return x0
+              elif x1=="upper":
+                if x2=="all":
+                  return x0.upper()
+                elif x2=="first":
+                  return x0[0].upper()+x0[1:]
+                elif x2=="even":
+                  return "".join([x0[i].upper() if i%2==0 else x0[i] for i in range(len(x0))])
+                elif x2=="odd":
+                  return "".join([x0[i].upper() if i%2==1 else x0[i] for i in range(len(x0))])
+                else:
+                  return x0
+              else:
+                return x0
+            
+            def change1(x0,x1,cc): # 文字列の置き換え
+              x=""
+              for i in range(len(cc)):
+                if cc[i]=="0":
+                  x=x+x0[0]
+                elif cc[i]=="1":
+                  x=x+x0[1]
+                elif cc[i]=="2":
+                  x=x+x1[0]
+                elif cc[i]=="3":
+                  x=x+x1[1]
+                elif cc[i]=="4":
+                  x=x+x1[2]
+                else:
+                  x=x
+              return x
+            
+            count=0
+            for v1,v2,w0 in itertools.product(l1,l2,c0):
+              #print(v0,v1,v2)
+              name=[]
+              name.append(change0(l0[0],v1,v2))
+              name.append(change0(l0[1],v1,v2))
+              x=change1(name,n0,w0)
+              print(x)
+              count+=1
+                
     elif select_sign == 'はい':
         if l0[0] == '' and lo[1] == '':
             st.write('名前と名字を入力してください')
@@ -56,5 +119,46 @@ if button:
         elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:
-            result = str(l0[0]) + str(l0[1]) + 'の誕生日は、' + str(n0[0]) + '年'+ str(n0[1]) + '月' + str(n0[2]) + '日です!'
-            st.write(result)
+            def change0(x0,x1,x2): # 文字列の置き換え
+              if x1=="none":
+                return x0
+              elif x1=="upper":
+                if x2=="all":
+                  return x0.upper()
+                elif x2=="first":
+                  return x0[0].upper()+x0[1:]
+                elif x2=="even":
+                  return "".join([x0[i].upper() if i%2==0 else x0[i] for i in range(len(x0))])
+                elif x2=="odd":
+                  return "".join([x0[i].upper() if i%2==1 else x0[i] for i in range(len(x0))])
+                else:
+                  return x0
+              else:
+                return x0
+            
+            def change1(x0,x1,cc): # 文字列の置き換え
+              x=""
+              for i in range(len(cc)):
+                if cc[i]=="0":
+                  x=x+x0[0]
+                elif cc[i]=="1":
+                  x=x+x0[1]
+                elif cc[i]=="2":
+                  x=x+x1[0]
+                elif cc[i]=="3":
+                  x=x+x1[1]
+                elif cc[i]=="4":
+                  x=x+x1[2]
+                else:
+                  x=x
+              return x
+            
+            count=0
+            for v1,v2,w0 in itertools.product(l1,l2,c0):
+              #print(v0,v1,v2)
+              name=[]
+              name.append(change0(l0[0],v1,v2))
+              name.append(change0(l0[1],v1,v2))
+              x=change1(name,n0,w0)
+              print(x)
+              count+=1
