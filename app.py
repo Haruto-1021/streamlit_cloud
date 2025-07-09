@@ -10,19 +10,67 @@ from datetime import date
 
 st.title('パスワード自動作成プログラム')
 
-input_firstname = st.text_input('名前を入力してください')
-input_lastname = st.text_input('名字を入力してください')
-select_year = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
-select_month = st.selectbox('生まれた月を選択してください',(range(1,13)))
-if int(select_month) == 4 or int(select_month) == 6 or int(select_month) == 9 or int(select_month) == 11:
+# input_firstname = st.text_input('名前を入力してください')
+# input_lastname = st.text_input('名字を入力してください')
+# select_year = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
+# select_month = st.selectbox('生まれた月を選択してください',(range(1,13)))
+# if int(select_month) == 4 or int(select_month) == 6 or int(select_month) == 9 or int(select_month) == 11:
+#     n = 30
+# elif ((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2:
+#     n = 29
+# elif not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2:
+#     n = 28
+# else:
+#     n=31
+# select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
+
+# result=""
+# select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
+# button = st.button('作成')
+
+# if button:
+#     if select_sign == 'いいえ':
+#         if input_firstname == '' and input_lastname == '':
+#             st.write('名前と名字を入力してください')
+#         elif input_firstname == '' and input_lastname != '':
+#             st.write('名前を入力してください')
+#         elif input_firstname != '' and input_lastname == '':
+#             st.write('名字を入力してください')
+#         else:    
+#             result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
+#             st.write(result)
+#     elif select_sign == 'はい':
+#         if input_firstname == '' and input_lastname == '':
+#             st.write('名前と名字を入力してください')
+#         elif input_firstname == '' and input_lastname != '':
+#             st.write('名前を入力してください')
+#         elif input_firstname != '' and input_lastname == '':
+#             st.write('名字を入力してください')
+#         else:
+#             result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
+#             st.write(result)
+
+l0 = ['', '']                   #名前の文字列
+l1 = ["none", "upper"]             # 何もしない、大文字へ
+l2 = ["all", "first", "even", "odd"] # 全部、最初だけ、偶数番目だけ、奇数番目だけ
+
+n0 = ['', '', '']               #生年月日の文字列
+
+s0 = ["!", "#", "$", "%", "=", "-", "+", "@"] #記号の文字列
+s1 = ""
+l0[0] = st.text_input('名前を入力してください')
+l0[1] = st.text_input('名字を入力してください')
+n0[0] = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
+n0[1] = st.selectbox('生まれた月を選択してください',(range(1,13)))
+if int(n0[1]) == 4 or int(n0[1]) == 6 or int(n0[1]) == 9 or int(n0[1]) == 11:
     n = 30
-elif ((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2:
+elif ((int(n0[0]) % 4 == 0 and int(n0[0]) % 100 != 0) or int(n0[0]) % 400 == 0) and int(n0[1]) == 2:
     n = 29
-elif not((int(select_year) % 4 == 0 and int(select_year) % 100 != 0) or int(select_year) % 400 == 0) and int(select_month) == 2:
+elif not((int(n0[0]) % 4 == 0 and int(n0[0]) % 100 != 0) or int(n0[0]) % 400 == 0) and int(n0[1]) == 2:
     n = 28
 else:
     n=31
-select_date = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
+n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 result=""
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
@@ -30,22 +78,22 @@ button = st.button('作成')
 
 if button:
     if select_sign == 'いいえ':
-        if input_firstname == '' and input_lastname == '':
+        if l0[0] == '' and l0[1] == '':
             st.write('名前と名字を入力してください')
-        elif input_firstname == '' and input_lastname != '':
+        elif l0[0] == '' and l0[1] != '':
             st.write('名前を入力してください')
-        elif input_firstname != '' and input_lastname == '':
+        elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:    
-            result = str(input_firstname) + str(input_lastname) + 'の誕生日は' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です'
+            result = str(l0[0]) + str(l0[1]) + 'の誕生日は' + str(n0[0]) + '年'+ str(n0[1]) + '月' + str(n0[2]) + '日です'
             st.write(result)
     elif select_sign == 'はい':
-        if input_firstname == '' and input_lastname == '':
+        if l0[0] == '' and lo[1] == '':
             st.write('名前と名字を入力してください')
-        elif input_firstname == '' and input_lastname != '':
+        elif l0[0] == '' and l0[1] != '':
             st.write('名前を入力してください')
-        elif input_firstname != '' and input_lastname == '':
+        elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:
-            result = str(input_firstname) + str(input_lastname) + 'の誕生日は、' + str(select_year) + '年'+ str(select_month) + '月' + str(select_date) + '日です!'
+            result = str(l0[0]) + str(l0[1]) + 'の誕生日は、' + str(n0[0]) + '年'+ str(n0[1]) + '月' + str(n0[2]) + '日です!'
             st.write(result)
