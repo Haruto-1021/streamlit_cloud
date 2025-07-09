@@ -111,6 +111,7 @@ if button:
               x=change1(name,n0,w0)
               print(x)
               count+=1
+            print(str(count) + '個のパスワードを生成しました')
                 
     elif select_sign == 'はい':
         if l0[0] == '' and lo[1] == '':
@@ -163,3 +164,4 @@ if button:
               x=change1(name,n0,w0)
               print(x)
               count+=1
+            print(str(count) + '個のパスワードを生成しました')
