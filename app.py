@@ -93,11 +93,11 @@ if button:
                 elif cc[i]=="1":
                   x=x+x0[1]
                 elif cc[i]=="2":
-                  x=x+x1[0]
+                  x=x+str(x1[0])
                 elif cc[i]=="3":
-                  x=x+x1[1]
+                  x=x+str(x1[1])
                 elif cc[i]=="4":
-                  x=x+x1[2]
+                  x=x+str(x1[2])
                 else:
                   x=x
               return x
