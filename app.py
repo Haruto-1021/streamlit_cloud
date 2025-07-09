@@ -56,7 +56,7 @@ n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1))
 
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
 
-z = st.int_input(何文字以上のパスワードを生成しますか)
+z = st.number_input(何文字以上のパスワードを生成しますか)
 
 button = st.button('作成')
 
