@@ -109,9 +109,9 @@ if button:
               name.append(change0(l0[0],v1,v2))
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
-              print(x)
+              st.write(x)
               count+=1
-            print(str(count) + '個のパスワードを生成しました')
+            st.write(str(count) + '個のパスワードを生成しました')
                 
     elif select_sign == 'はい':
         if l0[0] == '' and lo[1] == '':
@@ -162,6 +162,6 @@ if button:
               name.append(change0(l0[0],v1,v2))
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
-              print(x)
+              st.write(x)
               count+=1
-            print(str(count) + '個のパスワードを生成しました')
+            st.write(str(count) + '個のパスワードを生成しました')
