@@ -110,6 +110,8 @@ if button:
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
               st.write(x)
+              st.write(x,('i','1'))
+              st.write(x,('o','0'))
               count+=1
             st.write(str(count) + '個のパスワードを生成しました')
                 
@@ -163,5 +165,6 @@ if button:
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
               st.write(x)
+              st.write(x,replace('a','@'))
               count+=1
             st.write(str(count) + '個のパスワードを生成しました')
