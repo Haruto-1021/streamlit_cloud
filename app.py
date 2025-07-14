@@ -43,7 +43,7 @@ c0=["010", "012", "013", "014",
 l0[0] = st.text_input('名前を入力してください')
 l0[1] = st.text_input('名字を入力してください')
 n0[0] = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
-n0[1] = st.selectbox('生まれた月を選択してください',(range(1,13)))
+n0[1] = st.selectbox('生まれた月を選択してください',(range(01,13)))
 if int(n0[1]) == 4 or int(n0[1]) == 6 or int(n0[1]) == 9 or int(n0[1]) == 11:
     n = 30
 elif ((int(n0[0]) % 4 == 0 and int(n0[0]) % 100 != 0) or int(n0[0]) % 400 == 0) and int(n0[1]) == 2:
@@ -52,7 +52,7 @@ elif not((int(n0[0]) % 4 == 0 and int(n0[0]) % 100 != 0) or int(n0[0]) % 400 == 
     n = 28
 else:
     n=31
-n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
+n0[2] = st.selectbox('生まれた日を選択してください',(range(01,n+1)))
 
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
 
