@@ -116,10 +116,38 @@ if button:
                   continue
               else:
                   st.write(x)
-                  st.write(x.replace('i','1'))
-                  st.write(x.replace('o','0'))
-                  st.write(x.replace('0','o'))
-                  st.write(x.replace('1','i'))
+                  if x == x.replace('0', 'o'):
+                        continue
+                  else:
+                      st.write(x.replace('0', 'o'))
+                  if x == x.replace('1', 'i'):
+                        continue
+                  else:
+                      st.write(x.replace('1', 'i'))
+                  if x == x.replace('2', 'z'):
+                        continue
+                  else:
+                      st.write(x.replace('2', 'z'))
+                  if x == x.replace('5', 's'):
+                        continue
+                  else:
+                      st.write(x.replace('5', 's'))
+                  if x == x.replace('o', '0'):
+                        continue
+                  else:
+                      st.write(x.replace('o', '0'))
+                  if x == x.replace('i', '1'):
+                        continue
+                  else:
+                      st.write(x.replace('i', '1'))
+                  if x == x.replace('z', '2'):
+                        continue
+                  else:
+                      st.write(x.replace('z', '2'))
+                  if x == x.replace('5', 's'):
+                        continue
+                  else:
+                      st.write(x.replace('5', 's'))
                   count+=1
             st.write(str(count) + '個のパスワードを生成しました')
                 
@@ -176,7 +204,53 @@ if button:
                   continue
               else:
                   st.write(x)
-                  st.write(x.replace('a','@'))
-                  st.write(x.replace('s','$'))
+                  if x == x.replace('0', 'o'):
+                        continue
+                  else:
+                      st.write(x.replace('0', 'o'))
+                  if x == x.replace('1', 'i'):
+                        continue
+                  else:
+                      st.write(x.replace('1', 'i'))
+                  if x == x.replace('2', 'z'):
+                        continue
+                  else:
+                      st.write(x.replace('2', 'z'))
+                  if x == x.replace('5', 's'):
+                        continue
+                  else:
+                      st.write(x.replace('5', 's'))
+                  if x == x.replace('o', '0'):
+                        continue
+                  else:
+                      st.write(x.replace('o', '0'))
+                  if x == x.replace('i', '1'):
+                        continue
+                  else:
+                      st.write(x.replace('i', '1'))
+                  if x == x.replace('z', '2'):
+                        continue
+                  else:
+                      st.write(x.replace('z', '2'))
+                  if x == x.replace('5', 's'):
+                        continue
+                  else:
+                      st.write(x.replace('5', 's'))
+                  if x == x.replace('1', '!'):
+                        continue
+                  else:
+                      st.write(x.replace('1', '!'))
+                  if x == x.replace('i', '!'):
+                        continue
+                  else:
+                      st.write(x.replace('1', '!'))
+                  if x == x.replace('a', '@'):
+                        continue
+                  else:
+                      st.write(x.replace('a', '@'))
+                  if x == x.replace('s', '$'):
+                        continue
+                  else:
+                      st.write(x.replace('s', '$'))
                   count+=1
             st.write(str(count) + '個のパスワードを生成しました')
