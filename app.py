@@ -113,7 +113,7 @@ if button:
                       continue
                   else:
                       st.write(x)
-                      st.sessin_state.count += 1
+                      st.session_state.count += 1
                       if '0' in x:
                           st.write(x.replace('0', 'o'))
                           st.session_state.count += 1
