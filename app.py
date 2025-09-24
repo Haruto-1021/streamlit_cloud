@@ -63,7 +63,6 @@ button = st.button('作成')
 
 
 if button:
-    if select_sign == 'いいえ':
         if l0[0] == '' and l0[1] == '':
             st.write('名前と名字を入力してください')
         elif l0[0] == '' and l0[1] != '':
@@ -104,6 +103,7 @@ if button:
                 else:
                   x = x
               return x
+    if select_sign == 'いいえ':
             
             st.session_state.count=0
             for v1, v2, w0 in itertools.product(l1, l2, c0):
@@ -152,47 +152,6 @@ if button:
             st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
     elif select_sign == "はい":
-        if l0[0] == '' and l0[1] == '':
-            st.write('名前と名字を入力してください')
-        elif l0[0] == '' and l0[1] != '':
-            st.write('名前を入力してください')
-        elif l0[0] != '' and l0[1] == '':
-            st.write('名字を入力してください')
-        else:
-            def change0(x0,x1,x2): # 文字列の置き換え
-              if x1 == "none":
-                return x0
-              elif x1 == "upper":
-                if x2 == "all":
-                  return x0.upper()
-                elif x2 == "first":
-                  return x0[0].upper()+x0[1:]
-                elif x2 == "even":
-                  return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
-                elif x2 == "odd":
-                  return "".join([x0[i].upper() if i%2 == 1 else x0[i] for i in range(len(x0))])
-                else:
-                  return x0
-              else:
-                return x0
-            
-            def change1(x0,x1,cc): # 文字列の置き換え
-              x=""
-              for i in range(len(cc)):
-                if cc[i]=="0":
-                  x=x+x0[0]
-                elif cc[i]=="1":
-                  x=x+x0[1]
-                elif cc[i]=="2":
-                  x=x+str(x1[0])
-                elif cc[i]=="3":
-                  x=x+str(x1[1])
-                elif cc[i]=="4":
-                  x=x+str(x1[2])
-                else:
-                  x=x
-              return x
-            
             st.session_state.count=0
             for v1,v2,w0 in itertools.product(l1,l2,c0):
               #print(v0,v1,v2)
