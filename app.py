@@ -91,9 +91,9 @@ if button:
               x = ""
               for i in range(len(cc)):
                 if cc[i] == "0":
-                  x=x + x0[0]
+                  x=x + str(x0[0])
                 elif cc[i] == "1":
-                  x=x + x0[1]
+                  x=x + str(x0[1])
                 elif cc[i] == "2":
                   x=x + str(x1[0])
                 elif cc[i] == "3":
