@@ -151,7 +151,7 @@ if button:
                   st.session_state.count+=1
             st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
-    elif select_sign == 'はい':
+    else:
         if l0[0] == '' and lo[1] == '':
             st.write('名前と名字を入力してください')
         elif l0[0] == '' and l0[1] != '':
