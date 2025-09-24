@@ -152,7 +152,7 @@ if button:
             st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
     elif select_sign == "はい":
-        if l0[0] == '' and lo[1] == '':
+        if l0[0] == '' and l0[1] == '':
             st.write('名前と名字を入力してください')
         elif l0[0] == '' and l0[1] != '':
             st.write('名前を入力してください')
@@ -160,17 +160,17 @@ if button:
             st.write('名字を入力してください')
         else:
             def change0(x0,x1,x2): # 文字列の置き換え
-              if x1=="none":
+              if x1 == "none":
                 return x0
-              elif x1=="upper":
-                if x2=="all":
+              elif x1 == "upper":
+                if x2 == "all":
                   return x0.upper()
-                elif x2=="first":
+                elif x2 == "first":
                   return x0[0].upper()+x0[1:]
-                elif x2=="even":
-                  return "".join([x0[i].upper() if i%2==0 else x0[i] for i in range(len(x0))])
-                elif x2=="odd":
-                  return "".join([x0[i].upper() if i%2==1 else x0[i] for i in range(len(x0))])
+                elif x2 == "even":
+                  return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
+                elif x2 == "odd":
+                  return "".join([x0[i].upper() if i%2 == 1 else x0[i] for i in range(len(x0))])
                 else:
                   return x0
               else:
@@ -200,7 +200,7 @@ if button:
               name.append(change0(l0[0],v1,v2))
               name.append(change0(l0[1],v1,v2))
               x=change1(name,n0,w0)
-              if len(x)<n:
+              if len(x) < z:
                   continue
               else:
                   st.write(x)
