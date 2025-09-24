@@ -105,7 +105,7 @@ if button:
                   x=x
               return x
             
-            count=0
+            st.session_state.count=0
             for v1,v2,w0 in itertools.product(l1,l2,c0):
               #print(v0,v1,v2)
               name=[]
@@ -148,8 +148,8 @@ if button:
                         continue
                   else:
                       st.write(x.replace('5', 's'))
-                  count+=1
-            st.write(str(count) + '個のパスワードを生成しました')
+                  st.session_state.count+=1
+            st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
     elif select_sign == 'はい':
         if l0[0] == '' and lo[1] == '':
@@ -193,7 +193,7 @@ if button:
                   x=x
               return x
             
-            count=0
+            st.session_state.count=0
             for v1,v2,w0 in itertools.product(l1,l2,c0):
               #print(v0,v1,v2)
               name=[]
@@ -252,5 +252,5 @@ if button:
                         continue
                   else:
                       st.write(x.replace('s', '$'))
-                  count+=1
-            st.write(str(count) + '個のパスワードを生成しました')
+                  st.session_state.count+=1
+            st.write(str(st.session_state.count) + '個のパスワードを生成しました')
