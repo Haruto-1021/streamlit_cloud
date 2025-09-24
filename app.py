@@ -149,7 +149,7 @@ if button:
                   else:
                       st.write(x.replace('5', 's'))
                   count+=1
-    st.write(str(count) + '個のパスワードを生成しました')
+        st.write(str(count) + '個のパスワードを生成しました')
                 
     elif select_sign == 'はい':
         if l0[0] == '' and lo[1] == '':
@@ -253,4 +253,4 @@ if button:
                   else:
                       st.write(x.replace('s', '$'))
                   count+=1
-    st.write(str(count) + '個のパスワードを生成しました')
+        st.write(str(count) + '個のパスワードを生成しました')
