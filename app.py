@@ -172,65 +172,65 @@ if button:
                   # if len(x) < z:
                   #     continue
                   # else:
-                      st.write(x)
-                      if '0' in x:
-                          st.write(x.replace('0', 'o'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '1' in x:
-                          st.write(x.replace('1', 'i'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '2' in x:
-                          st.write(x.replace('2', 'z'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '5' in x:
-                          st.write(x.replace('5', 's'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'o' in x:
-                          st.write(x.replace('o', '0'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'i' in x:
-                          st.write(x.replace('i', '1'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'z' in x:
-                          st.write(x.replace('z', '2'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 's' in x:
-                          st.write(x.replace('s', '5'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '1' in x:
-                          st.write(x.replace('1', '!'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '1' in x:
-                          st.write(x.replace('1', '!'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'a' in x:
-                          st.write(x.replace('a', '@'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 's' in x:
-                          st.write(x.replace('s', '$'))
-                          st.session_state.count += 1
-                      else:
-                            continue
+                  st.write(x)
+                  if '0' in x:
+                      st.write(x.replace('0', 'o'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '1' in x:
+                      st.write(x.replace('1', 'i'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '2' in x:
+                      st.write(x.replace('2', 'z'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '5' in x:
+                      st.write(x.replace('5', 's'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'o' in x:
+                      st.write(x.replace('o', '0'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'i' in x:
+                      st.write(x.replace('i', '1'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'z' in x:
+                      st.write(x.replace('z', '2'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 's' in x:
+                      st.write(x.replace('s', '5'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '1' in x:
+                      st.write(x.replace('1', '!'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '1' in x:
+                      st.write(x.replace('1', '!'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'a' in x:
+                      st.write(x.replace('a', '@'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 's' in x:
+                      st.write(x.replace('s', '$'))
+                      st.session_state.count += 1
+                  else:
+                        continue
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
