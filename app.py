@@ -114,51 +114,51 @@ if button:
                   name.append(change0(l0[0], v1, v2))
                   name.append(change0(l0[1], v1, v2))
                   x = change1(name, n0, w0)
-                  if len(x) < z:
-                      continue
-                  else:
-                      st.write(x)
+                  # if len(x) < z:
+                  #     continue
+                  # else:
+                  st.write(x)
+                  st.session_state.count += 1
+                  if '0' in x:
+                      st.write(x.replace('0', 'o'))
                       st.session_state.count += 1
-                      if '0' in x:
-                          st.write(x.replace('0', 'o'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '1' in x:
-                          st.write(x.replace('1', 'i'))
-                          st.session_state.count += 1
-                      else:
-                          continue
-                      if '2' in x:
-                          st.write(x.replace('2', 'z'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if '5' in x:
-                          st.write(x.replace('5', 's'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'o' in x:
-                          st.write(x.replace('o', '0'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'i' in x:
-                          st.write(x.replace('i', '1'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 'z' in x:
-                          st.write(x.replace('z', '2'))
-                          st.session_state.count += 1
-                      else:
-                            continue
-                      if 's' in x:
-                          st.write(x.replace('5', 's'))
-                          st.session_state.count += 1
-                      else:
-                            continue
+                  else:
+                        continue
+                  if '1' in x:
+                      st.write(x.replace('1', 'i'))
+                      st.session_state.count += 1
+                  else:
+                      continue
+                  if '2' in x:
+                      st.write(x.replace('2', 'z'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if '5' in x:
+                      st.write(x.replace('5', 's'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'o' in x:
+                      st.write(x.replace('o', '0'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'i' in x:
+                      st.write(x.replace('i', '1'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 'z' in x:
+                      st.write(x.replace('z', '2'))
+                      st.session_state.count += 1
+                  else:
+                        continue
+                  if 's' in x:
+                      st.write(x.replace('5', 's'))
+                      st.session_state.count += 1
+                  else:
+                        continue
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
             elif select_sign == "はい":
