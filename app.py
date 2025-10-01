@@ -3,7 +3,6 @@
 
 # In[1]:
 
-
 import streamlit as st
 import os
 from datetime import date
@@ -16,8 +15,6 @@ l1 = ["none", "upper"]             # 何もしない、大文字へ
 l2 = ["all", "first", "even", "odd"] # 全部、最初だけ、偶数番目だけ、奇数番目だけ
 
 n0 = ['', '', '']               #生年月日の文字列
-
-# s0 = ["!", "#", "$", "%", "=", "-", "+", "@"] #記号の文字列
 
 c0=["000", "001", "002", "003", "004", 
     "010", "011", "012", "013", "014",
@@ -60,8 +57,6 @@ else:
 n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
-
-# z = st.number_input('何文字以上のパスワードを生成しますか',min_value=8,step=1)
 
 button = st.button('作成')
 
@@ -114,9 +109,6 @@ if button:
                   name.append(change0(l0[0], v1, v2))
                   name.append(change0(l0[1], v1, v2))
                   x = change1(name, n0, w0)
-                  # if len(x) < z:
-                  #     continue
-                  # else:
                   st.write(x)
                   st.session_state.count += 1
                   if '0' in x:
@@ -124,41 +116,49 @@ if button:
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if '1' in x:
                       st.write(x.replace('1', 'i'))
                       st.session_state.count += 1
                   else:
                       continue
+                      
                   if '2' in x:
                       st.write(x.replace('2', 'z'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if '5' in x:
                       st.write(x.replace('5', 's'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'o' in x:
                       st.write(x.replace('o', '0'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'i' in x:
                       st.write(x.replace('i', '1'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'z' in x:
                       st.write(x.replace('z', '2'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 's' in x:
                       st.write(x.replace('5', 's'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
             elif select_sign == "はい":
@@ -169,68 +169,65 @@ if button:
                   name.append(change0(l0[0],v1,v2))
                   name.append(change0(l0[1],v1,v2))
                   x=change1(name,n0,w0)
-                  # if len(x) < z:
-                  #     continue
-                  # else:
                   st.write(x)
                   if '0' in x:
                       st.write(x.replace('0', 'o'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if '1' in x:
                       st.write(x.replace('1', 'i'))
                       st.session_state.count += 1
+                      st.write(x.replace('1', '!'))
+                      st.session_state.count += 1
                   else:
                         continue
+                      
                   if '2' in x:
                       st.write(x.replace('2', 'z'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if '5' in x:
                       st.write(x.replace('5', 's'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'o' in x:
                       st.write(x.replace('o', '0'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'i' in x:
                       st.write(x.replace('i', '1'))
                       st.session_state.count += 1
+                      st.write(x.replace('i', '!'))
+                      st.session_state.count += 1
                   else:
                         continue
+                      
                   if 'z' in x:
                       st.write(x.replace('z', '2'))
                       st.session_state.count += 1
                   else:
                         continue
+                      
                   if 's' in x:
                       st.write(x.replace('s', '5'))
                       st.session_state.count += 1
-                  else:
-                        continue
-                  if '1' in x:
-                      st.write(x.replace('1', '!'))
+                      st.write(x.replace('s', '$'))
                       st.session_state.count += 1
                   else:
                         continue
-                  if '1' in x:
-                      st.write(x.replace('1', '!'))
-                      st.session_state.count += 1
-                  else:
-                        continue
+                      
                   if 'a' in x:
                       st.write(x.replace('a', '@'))
                       st.session_state.count += 1
                   else:
                         continue
-                  if 's' in x:
-                      st.write(x.replace('s', '$'))
-                      st.session_state.count += 1
-                  else:
-                        continue
+                      
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
