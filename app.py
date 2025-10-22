@@ -14,33 +14,14 @@ l0 = ['', '']                   #名前の文字列
 l1 = ["none", "upper"]             # 何もしない、大文字へ
 l2 = ["all", "first", "even", "odd"] # 全部、最初だけ、偶数番目だけ、奇数番目だけ
 
-n0 = ['', '', '']               #生年月日の文字列
+n0 = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']               #生年月日の文字列
 
-c0=["000", "001", "002", "003", "004", 
-    "010", "011", "012", "013", "014",
-    "020", "021", "022", "023", "024",
-    "030", "031", "032", "033", "034",
-    "040", "041", "042", "043", "044",
-    "100", "101", "102", "103", "104",
-    "110", "111", "112", "113", "114",
-    "120", "121", "122", "123", "124",
-    "130", "131", "132", "133", "134",
-    "140", "141", "142", "143", "144",
-    "200", "201", "202", "203", "204",
-    "210", "211", "212", "213", "214",
-    "220", "221", "222", "223", "224",
-    "230", "231", "232", "233", "234",
-    "240", "241", "242", "243", "244",
-    "300", "301", "302", "303", "304",
-    "310", "311", "312", "313", "314",
-    "320", "321", "322", "323", "324",
-    "330", "331", "332", "333", "334",
-    "340", "341", "342", "343", "344",
-    "400", "401", "402", "403", "404",
-    "410", "411", "412", "413", "414",
-    "420", "421", "422", "423", "424",
-    "430", "431", "432", "433", "434",
-    "440", "441", "442", "443", "444"] #　並びパターン
+bef0 = ['0', '1', '2', '5', 'i', 'o', 's', 'z']
+aft0 = ['o', 'i', 'z', 's', '1', '0', '5', '2']
+bef1 = ['0', '1', '1', '2', '5', 'a', 'i', 'i', 'o', 's', 's', 'z']
+aft1 = ['o', 'i', '!', 'z', 's', '@', '1', '!', '0', '5', '$', '2']
+
+c0=["abcdefghijklmnopqrst"] #　並びパターン
 
 l0[0] = st.text_input('名前を入力してください')
 l0[1] = st.text_input('名字を入力してください')
@@ -55,6 +36,24 @@ elif not((int(n0[0]) % 4 == 0 and int(n0[0]) % 100 != 0) or int(n0[0]) % 400 == 
 else:
     n=31
 n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
+
+n0[3] = n0[0] + n0[1] + n0[2]
+n0[4] = n0[0] + n0[1]
+n0[5] = n0[0] + n0[2]
+n0[6] = n0[1] + n0[2]
+
+n0[7] = str(int(n0[0]) + int(n0[1]) + int(n0[2]))
+n0[8] = str(int(n0[0]) + int(n0[1]))
+n0[9] = str(int(n0[0]) + int(n0[2]))
+n0[10] = str(int(n0[1]) + int(n0[2]))
+
+n0[11] = str(int(int(int(n0[0]) / 1000) % 10) + int(int(int(n0[0]) / 100) % 10) + int(int(int(n0[0]) / 10) % 10) + int(int(n0[0]) % 10))
+n0[12] = str(int(int(int(n0[1]) / 10) % 10) + int(int(n0[1]) % 10))
+n0[13] = str(int(int(int(n0[2]) / 10) % 10) + int(int(n0[2]) % 10))
+n0[14] = str(int(int(int(n0[0]) / 1000) % 10) + int(int(int(n0[0]) / 100) % 10) + int(int(int(n0[0]) / 10) % 10) + int(int(n0[0]) % 10) + int(int(int(n0[1]) / 10) % 10) + int(int(n0[1]) % 10) + int(int(int(n0[2]) / 10) % 10) + int(int(n0[2]) % 10))
+n0[15] = str(int(int(int(n0[0]) / 1000) % 10) + int(int(int(n0[0]) / 100) % 10) + int(int(int(n0[0]) / 10) % 10) + int(int(n0[0]) % 10) + int(int(int(n0[1]) / 10) % 10) + int(int(n0[1]) % 10))
+n0[16] = str(int(int(int(n0[0]) / 1000) % 10) + int(int(int(n0[0]) / 100) % 10) + int(int(int(n0[0]) / 10) % 10) + int(int(n0[0]) % 10) + int(int(int(n0[2]) / 10) % 10) + int(int(n0[2]) % 10))
+n0[17] = str(int(int(int(n0[1]) / 10) % 10) + int(int(n0[1]) % 10) + int(int(int(n0[2]) / 10) % 10) + int(int(n0[2]) % 10))
 
 select_sign = st.selectbox('記号を入れたパスワードを作りますか？',('いいえ', 'はい'))
 
@@ -88,19 +87,50 @@ if button:
             def change1(x0, x1, cc): # 文字列の置き換え
               x = ""
               for i in range(len(cc)):
-                if cc[i] == "0":
-                  x=x + x0[0]
-                elif cc[i] == "1":
-                  x=x + x0[1]
-                elif cc[i] == "2":
-                  x=x + str(x1[0])
-                elif cc[i] == "3":
-                  x=x + str(x1[1])
-                elif cc[i] == "4":
-                  x=x + str(x1[2])
+                if cc[i]=="a":
+                  x=x+x0[0]
+                elif cc[i]=="b":
+                  x=x+x0[1]
+                elif cc[i]=="c":
+                  x=x+x1[0]
+                elif cc[i]=="d":
+                  x=x+x1[1]
+                elif cc[i]=="e":
+                  x=x+x1[2]
+                elif cc[i] == "f":
+                  x=x+x1[3]
+                elif cc[i] == "g":
+                  x=x+x1[4]
+                elif cc[i] == "h":
+                  x=x+x1[5]
+                elif cc[i] == "i":
+                  x=x+x1[6]
+                elif cc[i] == "j":
+                  x=x+x1[7]
+                elif cc[i] == "k":
+                  x=x+x1[8]
+                elif cc[i] == "l":
+                  x=x+x1[9]
+                elif cc[i] == "m":
+                  x=x+x1[10]
+                elif cc[i] == "n":
+                  x=x+x1[11]
+                elif cc[i] == "o":
+                  x=x+x1[12]
+                elif cc[i] == "p":
+                  x=x+x1[13]
+                elif cc[i] == "q":
+                  x=x+x1[14]
+                elif cc[i] == "r":
+                  x=x+x1[15]
+                elif cc[i] == "s":
+                  x=x+x1[16]
+                elif cc[i] == "t":
+                  x=x+x1[17]
                 else:
                   x = x
               return x
+                
             if select_sign == 'いいえ':
                 st.session_state.count = 0
                 for v1, v2, w0 in itertools.product(l1, l2, c0):
@@ -111,123 +141,24 @@ if button:
                   x = change1(name, n0, w0)
                   st.write(x)
                   st.session_state.count += 1
-                  if '0' in x:
-                      st.write(x.replace('0', 'o'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if '1' in x:
-                      st.write(x.replace('1', 'i'))
-                      st.session_state.count += 1
-                  else:
-                      continue
-                      
-                  if '2' in x:
-                      st.write(x.replace('2', 'z'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if '5' in x:
-                      st.write(x.replace('5', 's'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'o' in x:
-                      st.write(x.replace('o', '0'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'i' in x:
-                      st.write(x.replace('i', '1'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'z' in x:
-                      st.write(x.replace('z', '2'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 's' in x:
-                      st.write(x.replace('5', 's'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
+                  for a in range(len(bef0)):
+                      if bef0[a] in x:
+                          st.write(x.replace(bef0[a], aft0[a]))
+                          st.session_state.count += 1
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                 
-            elif select_sign == "はい":
-                st.session_state.count=0
-                for v1,v2,w0 in itertools.product(l1,l2,c0):
+            if select_sign == 'はい':
+                st.session_state.count = 0
+                for v1, v2, w0 in itertools.product(l1, l2, c0):
                   #print(v0,v1,v2)
-                  name=[]
-                  name.append(change0(l0[0],v1,v2))
-                  name.append(change0(l0[1],v1,v2))
-                  x=change1(name,n0,w0)
+                  name = []
+                  name.append(change0(l0[0], v1, v2))
+                  name.append(change0(l0[1], v1, v2))
+                  x = change1(name, n0, w0)
                   st.write(x)
-                  if '0' in x:
-                      st.write(x.replace('0', 'o'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if '1' in x:
-                      st.write(x.replace('1', 'i'))
-                      st.session_state.count += 1
-                      st.write(x.replace('1', '!'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if '2' in x:
-                      st.write(x.replace('2', 'z'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if '5' in x:
-                      st.write(x.replace('5', 's'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'o' in x:
-                      st.write(x.replace('o', '0'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'i' in x:
-                      st.write(x.replace('i', '1'))
-                      st.session_state.count += 1
-                      st.write(x.replace('i', '!'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'z' in x:
-                      st.write(x.replace('z', '2'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 's' in x:
-                      st.write(x.replace('s', '5'))
-                      st.session_state.count += 1
-                      st.write(x.replace('s', '$'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
-                  if 'a' in x:
-                      st.write(x.replace('a', '@'))
-                      st.session_state.count += 1
-                  else:
-                        continue
-                      
+                  st.session_state.count += 1
+                  for b in range(len(bef1)):
+                      if bef1[b] in x:
+                          st.write(x.replace(bef1[b], aft1[b]))
+                          st.session_state.count += 1
                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
