@@ -154,11 +154,11 @@ if button:
                 elif cc[i]=="1":
                   x=x+x0[1]
                 elif cc[i]=="2":
-                  x=x+x1[0]
+                  x=x+str(int(x1[0]))
                 elif cc[i]=="3":
-                  x=x+x1[1]
+                  x=x+str(int(x1[1]))
                 elif cc[i]=="4":
-                  x=x+x1[2]
+                  x=x+str(int(x1[2]))
                 elif cc[i] == "5":
                   x=x+str(int(x1[0]) + int(x1[1]) + int(x1[2]))
                 elif cc[i] == "6":
