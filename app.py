@@ -159,19 +159,19 @@ if button:
                 elif cc[i]=="1":
                   x=x+x0[1]
                 elif cc[i]=="2":
-                  x=x+x1[0]
+                  x=x+str(x1[0])
                 elif cc[i]=="3":
-                  x=x+x1[1]
+                  x=x+str(x1[1])
                 elif cc[i]=="4":
-                  x=x+x1[2]
+                  x=x+str(x1[2])
                 elif cc[i] == "5":
-                  x=x+x1[3]
+                  x=x+str(x1[3])
                 elif cc[i] == "6":
-                  x=x+x1[4]
+                  x=x+str(x1[4])
                 elif cc[i] == "7":
-                  x=x+x1[5]
+                  x=x+str(x1[5])
                 elif cc[i] == "8":
-                  x=x+x1[6]
+                  x=x+str(x1[6])
                 else:
                   x = x
               return x
