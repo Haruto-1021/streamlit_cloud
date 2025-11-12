@@ -325,7 +325,7 @@ if button:
                           st.write(str(st.session_state.count) + '個のパスワードを生成するのに、' + str(end_time - start_time) + '秒かかりました')
                                    
               elif s0[1] != '':
-              　 def change1(x0, x1, c0): # 文字列の置き換え
+                 def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
                    for i in range(len(cc)):
                      if cc[i] == "0":
