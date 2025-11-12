@@ -273,27 +273,27 @@ if button:
                      return x
                      if select_sign == 'いいえ':
                         def repAll(name,i):
-                        global st.session_state.count
+                          global st.session_state.count
                      #print("####",name,i,st.session_state.count)
-                        if i==len(bef0):
+                          if i==len(bef0):
                                 #print(name)
-                           st.session_state.count = st.session_state.count + 1
-                           return
+                             st.session_state.count = st.session_state.count + 1
+                             return
                      # i番目の置き換えをしない
-                           repAll(name,i+1)
+                          repAll(name,i+1)
                       # i番目の置き換えをする(全て)
-                           name = name.replace(bef0[i],aft0[i])
-                           repAll(name, i + 1)
-                           st.session_state.count = 0
-                           for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0, v1)
-                                name = []
-                                name.append(change0(l0[0], v1))
-                                name.append(change0(l0[1], v1))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                st.session_state.count += 1
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          name = name.replace(bef0[i],aft0[i])
+                          repAll(name, i + 1)
+                          st.session_state.count = 0
+                          for v1, v2, w0 in itertools.product(l1, l2, c0):
+                               #print(v0, v1)
+                               name = []
+                               name.append(change0(l0[0], v1))
+                               name.append(change0(l0[1], v1))
+                               x = change1(name, n0, w0)
+                               st.write(x)
+                               st.session_state.count += 1
+                             st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                      elif select_sign == 'はい':
                         def repAll(name,i):
                           global st.session_state.count
