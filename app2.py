@@ -274,128 +274,56 @@ if button:
                      if select_sign == 'いいえ':
                         def repAll(name,i):
                           global st.session_state.count
-                     #print("####",name,i,st.session_state.count)
-                          if i==len(bef0):
-                                #print(name)
+                          #print("####",name,i,st.session_state.count)
+                          if i==len(bef1):
+                          #print(name)
                              st.session_state.count = st.session_state.count + 1
-                             return
+                              return
                      # i番目の置き換えをしない
                           repAll(name,i+1)
-                      # i番目の置き換えをする(全て)
+                     # i番目の置き換えをする(全て)
                           name = name.replace(bef0[i],aft0[i])
                           repAll(name, i + 1)
+                          start_time = time.time()
+                          st.session_state.count = 0
+                          for v1, w0 in itertools.product(l1, c0):
+                            #print(v0,v1,v2)
+                            name = []
+                            name.append(change0(l0[0], v1))
+                            name.append(change0(l0[1], v1))
+                            x = change1(name, n0, w0)
+                            st.write(x)
+                            repAll(x, 0)
+                          end_time = time.time()
+                          st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          st.write(str(st.session_state.count) + '個のパスワードを生成するのに、' + str(end_time - start_time) + '秒かかりました')
+                     elif select_sign == 'はい':
+                        def repAll(name,i):
+                          global st.session_state.count
+                          #print("####",name,i,st.session_state.count)
+                          if i==len(bef1):
+                          #print(name)
+                             st.session_state.count = st.session_state.count + 1
+                              return
+                     # i番目の置き換えをしない
+                          repAll(name,i+1)
+                     # i番目の置き換えをする(全て)
+                          name = name.replace(bef1[i],aft1[i])
+                          repAll(name, i + 1)
+                          start_time = time.time()
                           st.session_state.count = 0
                           for v1, v2, w0 in itertools.product(l1, l2, c0):
-                               #print(v0, v1)
-                               name = []
-                               name.append(change0(l0[0], v1))
-                               name.append(change0(l0[1], v1))
-                               x = change1(name, n0, w0)
-                               st.write(x)
-                               st.session_state.count += 1
-                             st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                     elif select_sign == 'はい':
-                        def repAll(name,i):
-                          global st.session_state.count
-                          #print("####",name,i,st.session_state.count)
-                          if i==len(bef1):
-                          #print(name)
-                             st.session_state.count = st.session_state.count + 1
-                              return
-                     # i番目の置き換えをしない
-                              repAll(name,i+1)
-
-                     # i番目の置き換えをする(全て)
-                              name = name.replace(bef1[i],aft1[i])
-                              repAll(name, i + 1)
-                              start_time = time.time()
-                              st.session_state.count = 0
-                              for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0,v1,v2)
-                                name = []
-                                name.append(change0(l0[0], v1, v2))
-                                name.append(change0(l0[1], v1, v2))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                repAll(x, 0)
-                              end_time = time.time()
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                              st.write(str(st.session_state.count) + '個のパスワードを生成するのに、str(end_time - start_time) + '秒かかりました')
-              if s0[1] == '':
-                 def change1(x0, x1, c0): # 文字列の置き換え
-                   x = ""
-                   for i in range(len(cc)):
-                     if cc[i] == "0":
-                        x = x + x0[0]
-                     elif cc[i]=="1":
-                        x = x + x0[1]
-                     elif cc[i]=="2":
-                        x = x + str(int(x1[0]))
-                     elif cc[i] == "3":
-                        x = x + str(int(x1[1]))
-                     elif cc[i] == "4":
-                        x = x + str(int(x1[2]))
-                     elif cc[i] == "5":
-                        x = x + str(int(x1[0]) + int(x1[1]) + int(x1[2]))
-                     elif cc[i] == "6":
-                        x = x + str(int(x1[0]) + int(x1[1]))
-                     elif cc[i] == "7":
-                        x = x + str(int(x1[0]) + int(x1[2]))
-                     elif cc[i] == "8":
-                        x = x + str(int(x1[1]) + int(x1[2]))
-                     else:
-                        x = x
-                     return x
-                     if select_sign == 'いいえ':
-                        def repAll(name,i):
-                        global st.session_state.count
-                     #print("####",name,i,st.session_state.count)
-                        if i==len(bef0):
-                                #print(name)
-                           st.session_state.count = st.session_state.count + 1
-                           return
-                     # i番目の置き換えをしない
-                           repAll(name,i+1)
-                      # i番目の置き換えをする(全て)
-                           name = name.replace(bef0[i],aft0[i])
-                           repAll(name, i + 1)
-                           st.session_state.count = 0
-                           for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0, v1)
-                                name = []
-                                name.append(change0(l0[0], v1))
-                                name.append(change0(l0[1], v1))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                st.session_state.count += 1
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                     elif select_sign == 'はい':
-                        def repAll(name,i):
-                          global st.session_state.count
-                          #print("####",name,i,st.session_state.count)
-                          if i==len(bef1):
-                          #print(name)
-                             st.session_state.count = st.session_state.count + 1
-                              return
-                     # i番目の置き換えをしない
-                              repAll(name,i+1)
-
-                     # i番目の置き換えをする(全て)
-                              name = name.replace(bef1[i],aft1[i])
-                              repAll(name, i + 1)
-                              start_time = time.time()
-                              st.session_state.count = 0
-                              for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0,v1,v2)
-                                name = []
-                                name.append(change0(l0[0], v1, v2))
-                                name.append(change0(l0[1], v1, v2))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                repAll(x, 0)
-                              end_time = time.time()
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                              st.write(str(st.session_state.count) + '個のパスワードを生成するのに、str(end_time - start_time) + '秒かかりました')
+                            #print(v0,v1,v2)
+                            name = []
+                            name.append(change0(l0[0], v1, v2))
+                            name.append(change0(l0[1], v1, v2))
+                            x = change1(name, n0, w0)
+                            st.write(x)
+                            repAll(x, 0)
+                          end_time = time.time()
+                          st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          st.write(str(st.session_state.count) + '個のパスワードを生成するのに、str(end_time - start_time) + '秒かかりました')
+                                   
               elif s0[1] != '':
               　 def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
@@ -418,34 +346,37 @@ if button:
                         x = x + str(int(x1[0]) + int(x1[1]))
                      elif cc[i] == "8":
                         x = x + str(int(x1[0]) + int(x1[2]))
-                     elif cc[i] == "9":
+                     elif c1[i] == "9":
                         x = x + str(int(x1[1]) + int(x1[2]))
                      else:
                         x = x
                      return x
                      if select_sign == 'いいえ':
                         def repAll(name,i):
-                        global st.session_state.count
-                     #print("####",name,i,st.session_state.count)
-                        if i==len(bef0):
-                                #print(name)
-                           st.session_state.count = st.session_state.count + 1
-                           return
+                          global st.session_state.count
+                          #print("####",name,i,st.session_state.count)
+                          if i==len(bef1):
+                          #print(name)
+                             st.session_state.count = st.session_state.count + 1
+                              return
                      # i番目の置き換えをしない
-                           repAll(name,i+1)
-                      # i番目の置き換えをする(全て)
-                           name = name.replace(bef0[i],aft0[i])
-                           repAll(name, i + 1)
-                           st.session_state.count = 0
-                           for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0, v1)
-                                name = []
-                                name.append(change0(l0[0], v1))
-                                name.append(change0(l0[1], v1))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                st.session_state.count += 1
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          repAll(name,i+1)
+                     # i番目の置き換えをする(全て)
+                          name = name.replace(bef0[i],aft0[i])
+                          repAll(name, i + 1)
+                          start_time = time.time()
+                          st.session_state.count = 0
+                          for v1, w0 in itertools.product(l1, c0):
+                            #print(v0,v1,v2)
+                            name = []
+                            name.append(change0(l0[0], v1))
+                            name.append(change0(l0[1], v1))
+                            x = change1(name, n0, w0)
+                            st.write(x)
+                            repAll(x, 0)
+                          end_time = time.time()
+                          st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          st.write(str(st.session_state.count) + '個のパスワードを生成するのに、' + str(end_time - start_time) + '秒かかりました')
                      elif select_sign == 'はい':
                         def repAll(name,i):
                           global st.session_state.count
@@ -455,21 +386,20 @@ if button:
                              st.session_state.count = st.session_state.count + 1
                               return
                      # i番目の置き換えをしない
-                              repAll(name,i+1)
-
+                          repAll(name,i+1)
                      # i番目の置き換えをする(全て)
-                              name = name.replace(bef1[i],aft1[i])
-                              repAll(name, i + 1)
-                              start_time = time.time()
-                              st.session_state.count = 0
-                              for v1, v2, w0 in itertools.product(l1, l2, c0):
-                                #print(v0,v1,v2)
-                                name = []
-                                name.append(change0(l0[0], v1, v2))
-                                name.append(change0(l0[1], v1, v2))
-                                x = change1(name, n0, w0)
-                                st.write(x)
-                                repAll(x, 0)
-                              end_time = time.time()
-                              st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                              st.write(str(st.session_state.count) + '個のパスワードを生成するのに、str(end_time - start_time) + '秒かかりました')
+                          name = name.replace(bef1[i],aft1[i])
+                          repAll(name, i + 1)
+                          start_time = time.time()
+                          st.session_state.count = 0
+                          for v1, v2, w0 in itertools.product(l1, l2, c0):
+                            #print(v0,v1,v2)
+                            name = []
+                            name.append(change0(l0[0], v1, v2))
+                            name.append(change0(l0[1], v1, v2))
+                            x = change1(name, n0, w0)
+                            st.write(x)
+                            repAll(x, 0)
+                          end_time = time.time()
+                          st.write(str(st.session_state.count) + '個のパスワードを生成しました')
+                          st.write(str(st.session_state.count) + '個のパスワードを生成するのに、str(end_time - start_time) + '秒かかりました')
