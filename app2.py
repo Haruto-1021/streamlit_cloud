@@ -253,30 +253,30 @@ if button:
                      # return x0
                  def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
-                   for i in range(len(cc)):
-                     if cc[i] == "0":
+                   for i in range(len(c0)):
+                     if c0[i] == "0":
                         x = x + x0[0]
-                     elif cc[i]=="1":
+                     elif c0[i]=="1":
                         x = x + x0[1]
-                     elif cc[i]=="2":
+                     elif c0[i]=="2":
                         x = x + x1[0]
-                     elif cc[i] == "3":
+                     elif c0[i] == "3":
                         if int(x1[1]) < 10:
                          x = x + '0' + x1[1]
                         else:
                          x = x + x1[1]
-                     elif cc[i] == "4":
+                     elif c0[i] == "4":
                         if int(x1[2]) < 10:
                          x = x + '0' + x1[2]
                         else:
                          x = x + x1[2]
-                     elif cc[i] == "5":
+                     elif c0[i] == "5":
                         x = x + str(int(x1[0]) + int(x1[1]) + int(x1[2]))
-                     elif cc[i] == "6":
+                     elif c0[i] == "6":
                         x = x + str(int(x1[0]) + int(x1[1]))
-                     elif cc[i] == "7":
+                     elif c0[i] == "7":
                         x = x + str(int(x1[0]) + int(x1[2]))
-                     elif cc[i] == "8":
+                     elif c0[i] == "8":
                         x = x + str(int(x1[1]) + int(x1[2]))
                      else:
                         x = x
@@ -312,34 +312,34 @@ if button:
                      return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
                    # else:
                      # return x0
-                 def change1(x0, x1, c0): # 文字列の置き換え
+                 def change1(x0, x1, c1): # 文字列の置き換え
                    x = ""
-                   for i in range(len(cc)):
-                     if cc[i] == "0":
+                   for i in range(len(c1)):
+                     if c1[i] == "0":
                         x = x + x0[0]
-                     elif cc[i]=="1":
+                     elif c1[i]=="1":
                         x = x + x0[1]
-                     elif cc[i]=="2":
+                     elif c1[i]=="2":
                         x = x + x0[2]
-                     elif cc[i]=="3":
+                     elif c1[i]=="3":
                         x = x + x1[0]
-                     elif cc[i] == "4":
+                     elif c1[i] == "4":
                         if int(x1[1]) < 10:
                          x = x + '0' + x1[1]
                         else:
                          x = x + x1[1]
-                     elif cc[i] == "5":
+                     elif c1[i] == "5":
                         if int(x1[2]) < 10:
                          x = x + '0' + x1[2]
                         else:
                          x = x + x1[2]
-                     elif cc[i] == "6":
+                     elif c1[i] == "6":
                         x = x + str(int(x1[0]) + int(x1[1]) + int(x1[2]))
-                     elif cc[i] == "7":
+                     elif c1[i] == "7":
                         x = x + str(int(x1[0]) + int(x1[1]))
-                     elif cc[i] == "8":
+                     elif c1[i] == "8":
                         x = x + str(int(x1[0]) + int(x1[2]))
-                     elif cc[i] == "9":
+                     elif c1[i] == "9":
                         x = x + str(int(x1[1]) + int(x1[2]))
                      else:
                         x = x
