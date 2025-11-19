@@ -237,7 +237,7 @@ if button:
         elif l0[0] != '' and l0[2] == '':
             st.write('名字を入力してください')
         else:
-              if s0[1] == '':
+              if l0[1] == '':
                  def change0(x0, x1, x2): # 文字列の置き換え
                    if x1 == "none":
                      return x0
@@ -298,7 +298,7 @@ if button:
                  end_time = time.time()
                  st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                  st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました')
-              elif s0[1] != '':
+              elif l0[1] != '':
                  def change0(x0, x1, x2): # 文字列の置き換え
                    if x1 == "none":
                      return x0
