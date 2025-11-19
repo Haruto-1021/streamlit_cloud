@@ -262,14 +262,14 @@ if button:
                         x = x + x1[0]
                      elif c0[i] == "3":
                         if int(x1[1]) < 10:
-                         x = x + '0' + x1[1]
+                         x = x + '0' + str(x1[1])
                         else:
-                         x = x + x1[1]
+                         x = x + str(x1[1])
                      elif c0[i] == "4":
                         if int(x1[2]) < 10:
-                         x = x + '0' + x1[2]
+                         x = x + '0' + str(x1[2])
                         else:
-                         x = x + x1[2]
+                         x = x + str(x1[2])
                      elif c0[i] == "5":
                         x = x + str(int(x1[0]) + int(x1[1]) + int(x1[2]))
                      elif c0[i] == "6":
@@ -325,14 +325,14 @@ if button:
                         x = x + x1[0]
                      elif c1[i] == "4":
                         if int(x1[1]) < 10:
-                         x = x + '0' + x1[1]
+                         x = x + '0' + str(x1[1])
                         else:
-                         x = x + x1[1]
+                         x = x + str(x1[1])
                      elif c1[i] == "5":
                         if int(x1[2]) < 10:
-                         x = x + '0' + x1[2]
+                         x = x + '0' + str(x1[2])
                         else:
-                         x = x + x1[2]
+                         x = x + str(x1[2])
                      elif c1[i] == "6":
                         x = x + str(int(x1[0]) + int(x1[1]) + int(x1[2]))
                      elif c1[i] == "7":
