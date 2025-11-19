@@ -237,21 +237,21 @@ if button:
         elif l0[0] != '' and l0[2] == '':
             st.write('名字を入力してください')
         else:
-            def change0(x0, x1, x2): # 文字列の置き換え
-              if x1 == "none":
-                return x0
-              if x2 == "upper_all":
-                return x0.upper()
-              elif x2 == "upper_first":
-                return x0[0].upper() + x0[1:]
-              elif x2 == "upper_even":
-                return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
-              elif x2 == "upper_odd":
-                return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
-              else:
-                return x0
-
+        else:
               if s0[1] == '':
+                 def change0(x0, x1, x2): # 文字列の置き換え
+                   if x1 == "none":
+                     return x0
+                   if x2 == "upper_all":
+                     return x0.upper()
+                   elif x2 == "upper_first":
+                     return x0[0].upper() + x0[1:]
+                   elif x2 == "upper_even":
+                     return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
+                   elif x2 == "upper_odd":
+                     return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
+                   else:
+                     return x0
                  def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
                    for i in range(len(cc)):
@@ -300,6 +300,19 @@ if button:
                  st.write(str(st.session_state.count) + '個のパスワードを生成しました')
                  st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました')
               elif s0[1] != '':
+                 def change0(x0, x1, x2): # 文字列の置き換え
+                   if x1 == "none":
+                     return x0
+                   if x2 == "upper_all":
+                     return x0.upper()
+                   elif x2 == "upper_first":
+                     return x0[0].upper() + x0[1:]
+                   elif x2 == "upper_even":
+                     return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
+                   elif x2 == "upper_odd":
+                     return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
+                   else:
+                     return x0
                  def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
                    for i in range(len(cc)):
