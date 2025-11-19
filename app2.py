@@ -249,8 +249,8 @@ if button:
                      return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
                    elif x1 == "upper_odd":
                      return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
-                   # else:
-                     # return x0
+                   else:
+                     return x0
                  def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
                    for i in range(len(c0)):
@@ -310,8 +310,8 @@ if button:
                      return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
                    elif x1 == "upper_odd":
                      return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
-                   # else:
-                     # return x0
+                   else:
+                     return x0
                  def change1(x0, x1, c1): # 文字列の置き換え
                    x = ""
                    for i in range(len(c1)):
