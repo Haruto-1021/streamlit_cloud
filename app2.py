@@ -237,7 +237,6 @@ if button:
         elif l0[0] != '' and l0[2] == '':
             st.write('名字を入力してください')
         else:
-        else:
               if s0[1] == '':
                  def change0(x0, x1, x2): # 文字列の置き換え
                    if x1 == "none":
