@@ -356,5 +356,7 @@ if button:
                               st.write(x.replace(bef0[i], aft0[i]))
                               st.session_state.count += 1
                  end_time = time.time()
-                 st.write(str(st.session_state.count) + '個のパスワードを生成しました')
-                 st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました')
+                 st.write(str(st.session_state.count) + '個のパスワードを生成しました。')
+                 st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました。')
+                 st.write('文字の置き換えが22パターンあるため、2^22倍の時間がかかり、' + str((end_time - start_time) * (2 ** 22) / (3600*24)) + '秒かかります。')
+                 st.write('そのため、' + str((end_time - start_time) * (2 ** 22) / ((3600*24) * 2)) + '秒は安全です。')
