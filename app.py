@@ -276,8 +276,8 @@ if button:
                         x = x + str(int(x1[0]) + int(x1[2]))
                      elif c0[i] == "8":
                         x = x + str(int(x1[1]) + int(x1[2]))
-                     else:
-                        x = x
+                     # else:
+                     #    x = x
                      return x
                  st.session_state.count = 0
                  start_time = time.time()
@@ -337,8 +337,8 @@ if button:
                         x = x + str(int(x1[0]) + int(x1[2]))
                      elif c1[i] == "9":
                         x = x + str(int(x1[1]) + int(x1[2]))
-                     else:
-                        x = x
+                     # else:
+                     #    x = x
                      return x
                  st.session_state.count = 0
                  start_time = time.time()
