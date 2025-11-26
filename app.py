@@ -249,8 +249,6 @@ if button:
                      return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
                    elif x1 == "upper_odd":
                      return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
-                   # else:
-                     # return x0
                  def change1(x0, x1, c0): # 文字列の置き換え
                    x = ""
                    for i in range(len(c0)):
@@ -287,7 +285,7 @@ if button:
                        #print(v0, v1)
                       name = []
                       name.append(change0(l0[0], v1))
-                      name.append(change0(l0[1], v1))
+                      name.append(change0(l0[2], v1))
                       x = change1(name, n0, w0)
                       st.write(x)
                       st.session_state.count += 1
@@ -310,8 +308,6 @@ if button:
                      return "".join([x0[i].upper() if i % 2 == 0 else x0[i] for i in range(len(x0))])
                    elif x1 == "upper_odd":
                      return "".join([x0[i].upper() if i % 2 == 1 else x0[i] for i in range(len(x0))])
-                   # else:
-                     # return x0
                  def change1(x0, x1, c1): # 文字列の置き換え
                    x = ""
                    for i in range(len(c1)):
