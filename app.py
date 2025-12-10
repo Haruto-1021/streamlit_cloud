@@ -136,8 +136,8 @@ bef = ['0', '0', '1', '1', '1', '1', '1', '2', '2', '5', '5', 'a', 'i', 'i', 'o'
 aft = ['o', 'O', 'i', 'I', 'l', 'L', '!', 'z', 'Z', 's', 'S', '@', '1', '!', '0', '5', '$', 'v', 'V', 'u', 'U', '2'] # 変化後の文字列
 
 l0[0] = st.text_input('名前を入力してください')
-l0[1] = st.text_input('ミドルネームがあれば入力してください')
-l0[2] = st.text_input('名字を入力してください')
+l0[1] = st.text_input('名字を入力してください')
+l0[2] = st.text_input('入れたい文字または数字があれば入力してください')
 n0[0] = st.selectbox('生まれた年を選択してください',(range(1900,2026)))
 n0[1] = st.selectbox('生まれた月を選択してください',(range(1,13)))
 if int(n0[1]) == 4 or int(n0[1]) == 6 or int(n0[1]) == 9 or int(n0[1]) == 11:
@@ -153,14 +153,14 @@ n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1))
 button = st.button('作成')
 
 if button:
-        if l0[0] == '' and l0[2] == '':
+        if l0[0] == '' and l0[1] == '':
             st.write('名前と名字を入力してください')
-        elif l0[0] == '' and l0[2] != '':
+        elif l0[0] == '' and l0[1] != '':
             st.write('名前を入力してください')
-        elif l0[0] != '' and l0[2] == '':
+        elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:
-              if l0[1] == '':
+              if l0[2] == '':
                  def change0(x0, x1): # 文字列の置き換え
                    if x1 == "none":
                      return x0
@@ -208,20 +208,20 @@ if button:
                        #print(v0, v1)
                       name = []
                       name.append(change0(l0[0], v1))
-                      name.append(change0(l0[2], v1))
+                      name.append(change0(l0[1], v1))
                       x = change1(name, n0, w0)
                       st.write(x)
                       st.session_state.count += 1
                       for i in range(len(bef)):
-                          if bef[i] in x:
+                          # if bef[i] in x:
                               st.write(x.replace(bef[i], aft[i]))
                               st.session_state.count += 1
                  end_time = time.time()
 
-                 st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
-                 st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + 'は安全です。')
-                 st.write(sys.version)
-              elif l0[1] != '':
+                 st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '日、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
+                 st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '日、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + '年は安全です。')
+                 # st.write(sys.version)
+              elif l0[2] != '':
                  def change0(x0, x1): # 文字列の置き換え
                    if x1 == "none":
                      return x0
@@ -277,12 +277,12 @@ if button:
                       st.write(x)
                       st.session_state.count += 1
                       for i in range(len(bef)):
-                          if bef[i] in x:
+                          # if bef[i] in x:
                               st.write(x.replace(bef[i], aft[i]))
                               st.session_state.count += 1
                  end_time = time.time()
                  st.write(str(st.session_state.count) + '個のパスワードを生成しました。')
                  st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました。')
-                 st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
-                 st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + 'は安全です。')
-                 st.write(sys.version)
+                 st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '日、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
+                 st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '日、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + '年は安全です。')
+                 # st.write(sys.version)
