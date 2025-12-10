@@ -12,6 +12,7 @@ Original file is located at
 
 # In[1]:
 
+import sys
 import streamlit as st
 import os
 from datetime import date
@@ -219,6 +220,7 @@ if button:
 
                  st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
                  st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + 'は安全です。')
+                 st.write(sys.version)
               elif l0[1] != '':
                  def change0(x0, x1): # 文字列の置き換え
                    if x1 == "none":
@@ -283,3 +285,4 @@ if button:
                  st.write(str(st.session_state.count) + '個のパスワードを生成するのに、'+ str(end_time - start_time) + '秒かかりました。')
                  st.write('文字の置き換えが22パターンあるため、5^22通りの組み合わせがあり、このプログラムではそのうちの2^22通りを反映しているので、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365)) + '年かかります。')
                  st.write('そのため、' + str((end_time - start_time) * (2.5 ** 22) / ((3600*24) * 2)) + '秒、すなわち、' + str((end_time - start_time) * (2.5 ** 22) / (3600*24*365*2)) + 'は安全です。')
+                 st.write(sys.version)
