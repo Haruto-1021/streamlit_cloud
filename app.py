@@ -149,7 +149,7 @@ if button:
                    st.session_state.count += 1
                    for i in range(len(bef0)):
                        # if bef[i] in x:
-                           st.write(x.replace(bef[i], aft[i]) + '(' + bef0[i] + '→' + aft0[i] + ')')
+                           st.write(x.replace(bef0[i], aft0[i]) + '(' + bef0[i] + '→' + aft0[i] + ')')
                            st.session_state.count += 1
               end_time = time.time()
 
