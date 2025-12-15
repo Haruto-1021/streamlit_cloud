@@ -147,7 +147,7 @@ if button:
                    x = change1(name, n0, w0)
                    st.write(x)
                    st.session_state.count += 1
-                   for i in range(len(bef)):
+                   for i in range(len(bef0)):
                        # if bef[i] in x:
                            st.write(x.replace(bef[i], aft[i]) + '(' + bef0[i] + '→' + aft0[i] + ')')
                            st.session_state.count += 1
