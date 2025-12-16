@@ -96,6 +96,7 @@ if button:
         elif l0[0] != '' and l0[1] == '':
             st.write('名字を入力してください')
         else:
+            def heavy_process():
               def change0(x0, x1): # 文字列の置き換え
                 if x1 == "none":
                   return x0
