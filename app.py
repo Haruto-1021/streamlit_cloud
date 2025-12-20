@@ -86,7 +86,7 @@ else:
     n=31
 n0[2] = st.selectbox('生まれた日を選択してください',(range(1,n+1)))
 
-button = st.button('作成')
+button = st.button('実行')
 
 if button:
         if l0[0] == '' and l0[1] == '':
