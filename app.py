@@ -154,5 +154,5 @@ if button:
                            st.session_state.count += 1
               end_time = time.time()
               st.write(end_time - start_time)
-              st.write('文字の置き換えが41パターンあるため、5^41通りの組み合わせがあり、このプログラムではそのうちの26通りを反映しているので、' + str((end_time - start_time) * ((5 ** 41)/26) / (3600*24)) + '日、すなわち、' + str((end_time - start_time) * ((5 ** 41)/26) / (3600*24*365)) + '年かかります。')
-              st.write('そのため、' + str((end_time - start_time) * ((5 ** 41)/26) / ((3600*24) * 2)) + '日、すなわち、' + str((end_time - start_time) * ((5 ** 41)/26) / (3600*24*365*2)) + '年は安全であると推測できます。')
+              st.write('文字の置き換えが41パターンあるため、5^41通りの組み合わせがあり、このプログラムではそのうちの27通りを反映しているので、' + str((end_time - start_time) * ((5 ** 41)/27) / (3600*24)) + '日、すなわち、' + str((end_time - start_time) * ((5 ** 41)/27) / (3600*24*365)) + '年かかります。')
+              st.write('そのため、' + str((end_time - start_time) * ((5 ** 41)/27) / ((3600*24) * 2)) + '日、すなわち、' + str((end_time - start_time) * ((5 ** 41)/27) / (3600*24*365*2)) + '年は安全であると推測できます。')
