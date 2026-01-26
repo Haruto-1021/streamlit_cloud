@@ -138,7 +138,6 @@ if button:
                   else:
                      x = x
                 return x
-              st.session_state.count = 0
               start_time = time.time()
               for v1, w0 in itertools.product(l1, c0):
                     #print(v0, v1)
@@ -147,7 +146,6 @@ if button:
                    name.append(change0(l0[1], v1))
                    x = change1(name, n0, w0)
                    st.write(x)
-                   st.session_state.count += 1
                    for i in range(len(bef0)):
                            st.write(x.replace(bef0[i], aft0[i]))
               end_time = time.time()
